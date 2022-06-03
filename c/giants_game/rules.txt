@@ -1,0 +1,12 @@
+"Giants" is a simple gambling game invented by my friend. It is played by any amount of players and a casino player.
+The rules are very simple: 
+- All players bet some amount of money.
+- All players roll two six-side dices, while the casino player rolls one twelve-side dice.
+- If the sum of rolls done by the player exceeds the roll of the casino, the player loses.
+- If the sum is less than or equal to that of the casino, the player wins, but may choose to roll again with a four-side dice.
+- During a reroll, the player bets additional money equal to their previous bet, essentially doubling the stakes. (if they bet 50, they need to bet another 50, but get 2*100 = 200 if they win, and they make 100 of profit)
+- Sum of all dices is again compared to the casino's roll.
+- The casino cannot reroll.
+
+Like most gambling games, this game needs to yield a negative outcome in the long run for the player compared to the casino.
+This program was intended to empirically check whether that is the case. It also implements an interface to play the game in an "interactive" mode against the computer.
