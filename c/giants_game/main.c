@@ -43,8 +43,8 @@ void check_cmd_args(int argc, char* argv[]) {
         strcat(argv[1], argv[i]);
     }
 
-    if(argc != 5 || !strspn(argv[1], "012345678)")) {
-        printf("usage: %s <balance> <bet> <greed> <repeats>\n", argv[0]);
+    if(argc != 6 || !strspn(argv[1], "012345678)")) {
+        printf("usage: %s <balance> <bet> <greed> <repeats> <games>\n", argv[0]);
         exit(0);
     }
     return;
@@ -56,15 +56,15 @@ int main(int argc, char* argv[]) {
 
     check_cmd_args(argc, argv);
 
-    int balance = atoi(argv[1]);
-    int bet = atoi(argv[2]);
-    int greed = atoi(argv[3]);
-    int repeats = atoi(argv[4]);
-
+    unsigned int balance = atoi(argv[1]);
+    unsigned int bet = atoi(argv[2]);
+    unsigned int greed = atoi(argv[3]);
+    unsigned int repeats = atoi(argv[4]);
+    unsigned int games = atoi(argv[5]);
+	
 	float average_winratio = 0, average_bankrupt = 0;
-	unsigned int games = 50000;
 	for(int i = 0; i < games; i++) {
-		tmp = simulate_session(10000, 100, 3, 10000);
+		tmp = simulate_session(balance, bet, greed, repeats);
 		average_winratio += tmp.winratio;
 		average_bankrupt += tmp.bankruptcy;
 	}
