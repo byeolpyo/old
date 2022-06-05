@@ -60,7 +60,7 @@ int main(int argc, char* argv[])
 		return 0;
 	}
 	if(!strcmp(argv[1], "-h")) {
-		puts("usage\n./onedim [rule]/[-h]\n	-h prints this help screen\n	rule number must be between 0-255\n");
+		puts("usage\n./%s [rule]/[-h]\n	-h prints this help screen\n	rule number must be between 0-255\n", argv[0]);
 		return 0;
 	}
 
